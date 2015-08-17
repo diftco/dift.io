@@ -1,0 +1,62 @@
+/***************************
+ ****** SECTION: MAIN ******
+ ***************************/
+
+section#main {
+  background-color: #e5e5e5;
+  position: relative;
+  padding-top: 0;
+}
+
+#main header h1 {
+  margin-bottom: 0;
+}
+
+#main header h2 {
+  margin-top: 0;
+}
+
+#main header {
+  height: 100%;
+  padding-top: 120px;
+}
+
+#main header form  .form-control {
+  margin-right: 10px;
+}
+
+#main .video-row {
+  position: absolute;
+  bottom: 0;
+}
+
+/**
+ * Override Bootstrap
+ */
+
+#main .form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+#main .form-group  {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+
+  #main .video-row {
+    position: initial;
+  }
+
+  #main header {
+    padding-top: 0;
+  }
+
+  #main header form  .form-control {
+    width: 150px !important;
+  }
+
+}
+

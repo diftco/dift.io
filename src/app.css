@@ -1,0 +1,122 @@
+@import 'bootstrap';
+
+/*****************
+ ***** CORE ******
+ *****************/
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+ 
+img {
+  max-width: 100%;
+}
+
+body > #app {
+  min-height: 100%;
+  height: 100%;
+}
+
+section {
+  padding: 20px;
+}
+
+/******************************
+ ***** OVERRIDE BOOTSTRAP *****
+ ******************************/
+
+.btn,
+input.form-control {
+  letter-spacing: -.5px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid #b9b9b9;
+  color: #868686;
+  padding: 8px 14px;
+}
+
+input.form-control {
+  border: 0 none;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 19px;
+}
+
+
+/******************************
+ ***** CORE - RESPONSIVE ******
+ ******************************/
+
+@media only screen and (max-width: 768px) {
+
+  body {
+    text-align: center;
+  }
+
+}
+
+/*********************************
+ ************ NAVBAR *************
+ *********************************/
+
+#top-navbar {
+  background-color: #e5e5e5;
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+
+#top-navbar .navbar-brand {
+  height: auto;
+}
+
+#top-navbar .navbar-right {
+  margin: 15px 0; 
+}
+
+
+/**********************
+ ****** SECTIONS ******
+ **********************/
+
+@import './components/main-section/index.css';
+@import './components/features-section/index.css';
+
+/********************
+ ****** FOOTER ******
+ ********************/
+
+footer {
+  padding: 20px 20px 5px;
+}
+
+footer > ul {
+  padding-left: 0;
+}
+
+footer > ul {
+  padding-left: 0;
+}
+
+footer > ul > li {
+  display: inline-block;
+  margin-right: 15px;
+}
