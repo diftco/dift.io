@@ -8338,7 +8338,7 @@ body {
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -8363,19 +8363,43 @@ section {
   padding: 20px;
 }
 
-.blur {
-  -webkit-filter: blur(30px);
-  -moz-filter: blur(30px);
-  -o-filter: blur(30px);
-  -ms-filter: blur(30px);
+.blur h1,
+.blur h2,
+.blur h3,
+.blur p,
+.blur input,
+.blur button,
+.blur a {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
   filter: url(#blur);
-  filter: blur(30px);
+  filter: blur(5px);
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
-  -webkit-transition: 2s -webkit-filter linear;
-  -moz-transition: 2s -moz-filter linear;
-  -o-transition: 2s -o-filter linear;
-  transition: 2s filter linear;
-  transition: 2s -webkit-filter linear;
+  -webkit-transition: .1s -webkit-filter linear;
+  -moz-transition: .1s -moz-filter linear;
+  -o-transition: .1s -o-filter linear;
+  transition: .1s filter linear;
+  transition: .1s -webkit-filter linear;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
 }
 
 /******************************
@@ -8402,7 +8426,7 @@ input.form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  padding: 19px 14px;
+  padding: 19px;
 }
 
 /******************************
@@ -8422,7 +8446,7 @@ input.form-control {
 #top-navbar {
   background-color: #e5e5e5;
   margin-bottom: 0;
-  padding: 15px 15px 0;
+  padding-top: 15px;
 }
 
 #top-navbar .navbar-brand {
@@ -8570,7 +8594,6 @@ ul.dots {
 
 footer {
   padding: 20px 20px 5px;
-  text-align: left;
 }
 
 footer > ul {

@@ -24,10 +24,13 @@
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-responsive": "^1.2.1",
+    "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-redux": "^0.9.0",
     "react-swipe": "^2.1.0",
     "redux": "^1.0.1",
+    "redux-logger": "0.0.3",
+    "redux-thunk": "^0.1.0",
     "swipe-js-iso": "^2.0.1"
   },
   "devDependencies": {

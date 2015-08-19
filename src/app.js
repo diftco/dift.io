@@ -15,16 +15,21 @@ class App extends React.Component {
 
   render() {
     const { dispatch, lang, content } = this.props;
+    console.log(lang, 'lang');
+
+    const blurClass = lang.isChanging ? 'blur' : null;
 
     return (
       <div className="container-fluid">
 
         <TopNavbar 
-          lang={this.props.lang}
+          lang={lang.lang}
           onLangClick={l => dispatch(changeLang(l))} />
 
-        <MainSection {...content.main} />
-        <FeaturesSection items={content.features} />
+        <div className={blurClass}>
+          <MainSection {...content.main} />
+          <FeaturesSection items={content.features} />
+        </div>
 
         <Footer {...content.footer} />
 
@@ -60,7 +65,7 @@ class Footer extends React.Component {
  */
 
 App.propTypes = {
-  lang: PropTypes.string.isRequired,
+  lang: PropTypes.object.isRequired,
   content: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired
 };
@@ -79,9 +84,10 @@ const contentByLang = {
  */
 
 function select(state) {
+  console.log(state.lang.lang, '..');
   return {
     lang: state.lang,
-    content: contentByLang[state.lang] 
+    content: contentByLang[state.lang.lang] 
   };
 }
 
