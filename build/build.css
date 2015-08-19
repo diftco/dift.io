@@ -8338,7 +8338,7 @@ body {
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -8387,7 +8387,7 @@ input.form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  padding: 19px;
+  padding: 19px 14px;
 }
 
 /******************************
@@ -8407,7 +8407,7 @@ input.form-control {
 #top-navbar {
   background-color: #e5e5e5;
   margin-bottom: 0;
-  padding-top: 15px;
+  padding: 15px 15px 0;
 }
 
 #top-navbar .navbar-brand {
@@ -8496,6 +8496,10 @@ section#features {
 }
 
 @media only screen and (max-width: 768px) {
+  section#features {
+    padding-top: 35px;
+  }
+
   #features header {
     padding-top: 0;
   }
@@ -8516,8 +8520,9 @@ section#features {
  ****** DOTS INDICATOR ******
  ****************************/
 
-.dots {
+ul.dots {
   text-align: center;
+  padding-left: 0;
 }
 
 .dot {
@@ -8534,12 +8539,23 @@ section#features {
   background-color: blue;
 }
 
+/****************************
+ ****** SLIDES CONTENT ******
+ ****************************/
+
+@media only screen and (max-width: 768px) {
+  .symbols {
+    margin-bottom: 20px;
+  }
+}
+
 /********************
  ****** FOOTER ******
  ********************/
 
 footer {
   padding: 20px 20px 5px;
+  text-align: left;
 }
 
 footer > ul {

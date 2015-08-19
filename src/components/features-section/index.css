@@ -13,6 +13,10 @@ section#features {
 
 @media only screen and (max-width: 768px) {
 
+  section#features {
+    padding-top: 35px;
+  }
+
   #features header {
     padding-top: 0;
   }
@@ -35,8 +39,9 @@ section#features {
  ****** DOTS INDICATOR ******
  ****************************/
 
-.dots {
+ul.dots {
   text-align: center;
+  padding-left: 0;
 }
 
 .dot {
@@ -52,3 +57,16 @@ section#features {
 .dot.active {
   background-color: blue;
 }
+
+/****************************
+ ****** SLIDES CONTENT ******
+ ****************************/
+
+@media only screen and (max-width: 768px) {
+
+  .symbols {
+    margin-bottom: 20px;
+  }
+
+}
+

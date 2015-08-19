@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 /**
  * @class MainSection
@@ -7,25 +7,10 @@ import React from 'react';
 export default class MainSection extends React.Component {
 
   render() {
+    const { title, subtitle, form } = this.props;
 
     return (
       <section id="main" className="row">
-
-        <nav id="top-navbar" className="navbar">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">
-                <img alt="Dift" src="/img/brand.png" />
-              </a>
-            </div>
-
-            <div className="collapse navbar-collapse">
-              <ul className="nav navbar-nav navbar-right">
-                <li><button className="btn">Get Early Access</button></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
 
         <div className="col-sm-12">
 
@@ -35,19 +20,19 @@ export default class MainSection extends React.Component {
 
               <div className="row">
                 <header className="col-sm-12">
-                  <h1>Dift</h1>
-                  <h2>Social Analytics, Realtime, Anywhere</h2>
+                  <h1>{title}</h1>
+                  <h2>{subtitle}</h2>
 
                   <form className="form-inline">
                     <div className="form-group">
                       <input 
                         type="text" 
                         className="form-control" 
-                        placeholder="Enter Email Address" />
+                        placeholder={form.text} />
                     </div>
                     <button 
                       type="submit" 
-                      className="btn">Get Early Access</button>
+                      className="btn">{form.button}</button>
                   </form>
 
                 </header>
@@ -72,5 +57,18 @@ export default class MainSection extends React.Component {
       </section>
     );
   }
+};
+
+/**
+ * prop types
+ */
+
+MainSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  form: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    button: PropTypes.string.isRequired
+  }).isRequired
 };
 

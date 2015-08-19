@@ -1,49 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactSwipe from 'react-swipe';
-import ReportsPane from './reports-pane.jsx';
-
-const SECTION_COUNT = 4;
-
-class DotsIndicator extends React.Component {
-
-  getDefaultProps() {
-    return { 
-      activeIndex: 0,
-      onDotClick: function() {}
-    }
-  }
-
-  render() {
-
-    var self = this;
-
-    var renderDot = function(i) {
-      let className = 'dot';
-
-      if (self.props.activeIndex === i) {
-        className += ' active';
-      }
-
-      return (
-        <li key={i} 
-          className={className}
-          onClick={self.props.onDotClick.bind(self, i)}>
-        </li>
-      )
-    };
-
-    var dots = [];
-    for (var i=0; i<this.props.count; i++) {
-      dots.push(renderDot(i));
-    }
-
-    return (
-      <ul className="dots">{dots}</ul>
-    );
-  
-  }
-
-};
+import Pane from './pane';
+import DotsIndicator from './dots-indicator';
 
 /**
  * @class FeaturesSection
@@ -53,6 +11,7 @@ export default class FeaturesSection extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = { swipeIndex: 0 };
   }
 
@@ -64,12 +23,13 @@ export default class FeaturesSection extends React.Component {
     document.onkeydown = null; 
   }
 
-  onSlideChange() {
-    //console.log('slideChange', arguments);
+  onSlideChange(i) {
+    this.setState({ swipeIndex: i });
   }
 
   handleNext() {
-    var i = Math.min(this.state.swipeIndex + 1, SECTION_COUNT - 1);
+    var count = this.props.items.length;
+    var i = Math.min(this.state.swipeIndex + 1, count - 1);
     
     this.setState({ swipeIndex: i });
   }
@@ -98,23 +58,22 @@ export default class FeaturesSection extends React.Component {
   }
 
   render() {
+    const { items } = this.props;
 
     return (
       <section id="features" className="row">
 
         <ReactSwipe 
+          shouldUpdate={() => true}
           continuous={false} 
           slideToIndex={this.state.swipeIndex}
-          callback={this.onSlideChange}>
+          callback={this.onSlideChange.bind(this)}>
 
-          <ReportsPane />
-          <ReportsPane />
-          <ReportsPane />
-          <ReportsPane />
+          {items.map((item, i) => <Pane key={i} {...item} />)}
 
         </ReactSwipe>
 
-        <DotsIndicator count={4} 
+        <DotsIndicator count={items.length} 
           activeIndex={this.state.swipeIndex} 
           onDotClick={this.handleDotClick.bind(this)}
         />
@@ -125,3 +84,13 @@ export default class FeaturesSection extends React.Component {
 
 };
 
+/**
+ * Prop types
+ */ 
+
+FeaturesSection.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired
+  }))
+};
