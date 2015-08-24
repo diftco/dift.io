@@ -32,7 +32,11 @@ export default {
         i18n: true,
         en: 'Swipe up and share reports in multiple formats (XLS, JPG or PDF) faster than ever.',
         es: 'Swipe para arriba para compartir tus reportes en diferentes formatos (XLS, JPG, PDF) mas rápido que núnca.'
-      } 
+      },
+      imgs: {
+        features: '/img/compressed/features1.png',
+        phone: '/img/compressed/phone1.png'
+      }
     },
     {
       title: {
@@ -44,7 +48,11 @@ export default {
         i18n: true,
         en: 'Simple, fast and secure. Your clients could be monitoring performance in seconds.',
         es: 'Simple, rápido y seguro. Tus clientes pueden monitorear su performance en segundos.'
-      } 
+      },
+      imgs: {
+        features: '/img/compressed/features2.png',
+        phone: '/img/compressed/phone2.png'
+      }
     },
     {
       title: {
@@ -56,7 +64,11 @@ export default {
         i18n: true,
         en: 'Real time reach performance from all your networks in one place.',
         es: 'Performance de tu alcance en todas tus redes en tiempo real en un solo lugar'
-      } 
+      },
+      imgs: {
+        features: '/img/compressed/features3.png',
+        phone: '/img/compressed/phone3.png'
+      }
     }
   ],
 

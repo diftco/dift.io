@@ -63,6 +63,11 @@ export default class FeaturesSection extends React.Component {
     return (
       <section id="features" className="row">
 
+        <DotsIndicator count={items.length} 
+          activeIndex={this.state.swipeIndex} 
+          onDotClick={this.handleDotClick.bind(this)}
+        />
+
         <ReactSwipe 
           shouldUpdate={() => true}
           continuous={false} 
@@ -73,10 +78,6 @@ export default class FeaturesSection extends React.Component {
 
         </ReactSwipe>
 
-        <DotsIndicator count={items.length} 
-          activeIndex={this.state.swipeIndex} 
-          onDotClick={this.handleDotClick.bind(this)}
-        />
 
       </section>
     );

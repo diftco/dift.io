@@ -26,6 +26,12 @@ export function endChangeLang(lang) {
 };
 
 /**
+ * change lang timeout
+ */
+
+const CHANGE_LANG_TIMEOUT = 0;
+
+/**
  *
  */
 
@@ -38,6 +44,6 @@ export function changeLang(lang) {
 
       dispatch(endChangeLang(lang));
 
-    }, 500);
+    }, CHANGE_LANG_TIMEOUT);
   };
 }

@@ -15,15 +15,14 @@ class App extends React.Component {
 
   render() {
     const { dispatch, lang, content } = this.props;
-    console.log(lang, 'lang');
-
-    const blurClass = lang.isChanging ? 'blur' : null;
+    const blurClass = lang.isChanging ? 'lang-in' : 'lang-out';
+    const selectedLang = lang.isChanging ? lang.nextLang : lang.lang;
 
     return (
       <div className="container-fluid">
 
         <TopNavbar 
-          lang={lang.lang}
+          lang={selectedLang}
           onLangClick={l => dispatch(changeLang(l))} />
 
         <div className={blurClass}>
@@ -84,7 +83,7 @@ const contentByLang = {
  */
 
 function select(state) {
-  console.log(state.lang.lang, '..');
+  
   return {
     lang: state.lang,
     content: contentByLang[state.lang.lang] 

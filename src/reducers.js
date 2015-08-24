@@ -12,12 +12,13 @@ import { getLang } from './helpers';
  * lang state reducer
  */
 
-function lang(state={ lang: getLang(), isChanging: false }, action) {
+function lang(state={ lang: getLang(), isChanging: false, nextLang: null }, action) {
 
   switch (action.type) {
     case CHANGE_LANG_START: 
       return _.merge({}, state, { 
-        isChanging: true 
+        isChanging: true,
+        nextLang: action.lang
       });
     case CHANGE_LANG:
       return _.merge({}, state, { 
@@ -27,7 +28,6 @@ function lang(state={ lang: getLang(), isChanging: false }, action) {
     default:
       return state;
   }
-
 }
 
 /**

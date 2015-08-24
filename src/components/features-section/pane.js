@@ -7,7 +7,7 @@ import React from 'react';
 export default class Pane extends React.Component {
 
   render() {
-    const { title, subtitle } = this.props;
+    const { title, subtitle, imgs } = this.props;
 
     return (
 
@@ -20,10 +20,10 @@ export default class Pane extends React.Component {
                 <header className="col-sm-12">
 
                   <h2>{title}</h2>
-                  <h3>{subtitle}</h3>
+                  <h4>{subtitle}</h4>
 
                   <div className="symbols">
-                    <img src="/img/beautiful-features.png" />
+                    <img src={imgs.features} />
                   </div>
 
                 </header>
@@ -31,8 +31,8 @@ export default class Pane extends React.Component {
 
             </div>
 
-            <div className="col-sm-7">
-              <img src="/img/beautiful.png" />
+            <div className="col-sm-7" css={{ height: '500px' }}>
+              <img className="phone" src={imgs.phone} />
             </div>
 
           </div>

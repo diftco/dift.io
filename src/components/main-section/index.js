@@ -21,7 +21,7 @@ export default class MainSection extends React.Component {
               <div className="row">
                 <header className="col-sm-12">
                   <h1>{title}</h1>
-                  <h2>{subtitle}</h2>
+                  <h3>{subtitle}</h3>
 
                   <form className="form-inline">
                     <div className="form-group">
@@ -41,16 +41,18 @@ export default class MainSection extends React.Component {
             </div>
 
             <div className="col-sm-5">
-              <img src="/img/phone1.png" />
+              <img src="/img/compressed/world.png" />
             </div>
 
           </div>
 
+          {/*
           <div className="row video-row">
             <div className="col-sm-12">
               <img src="/img/video-mini.png" />
             </div>
           </div>
+          */}
 
         </div>
 

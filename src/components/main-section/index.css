@@ -3,9 +3,8 @@
  ***************************/
 
 section#main {
-  background-color: #e5e5e5;
+  background-color: #adadad;
   position: relative;
-  padding-top: 0;
 }
 
 #main header h1 {
@@ -18,7 +17,7 @@ section#main {
 
 #main header {
   height: 100%;
-  padding-top: 120px;
+  padding-top: 7%;
 }
 
 #main header form  .form-control {

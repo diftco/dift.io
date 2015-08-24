@@ -34,35 +34,6 @@ section {
   padding: 20px;
 }
 
-.blur h1, .blur h2, .blur h3, .blur p, .blur input, .blur button, .blur a {
-  -webkit-filter: blur(5px); -moz-filter: blur(5px);
-  -o-filter: blur(5px); -ms-filter: blur(5px); 
-  filter: url(#blur); filter: blur(5px);  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
-  -webkit-transition: .1s -webkit-filter linear;
-  -moz-transition: .1s -moz-filter linear;
-  -o-transition: .1s -o-filter linear;
-  transition: .1s filter linear;
-  transition: .1s -webkit-filter linear;
-}
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-.example-appear {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-}
-
 /******************************
  ***** OVERRIDE BOOTSTRAP *****
  ******************************/
@@ -110,7 +81,7 @@ input.form-control {
 #top-navbar {
   background-color: #e5e5e5;
   margin-bottom: 0;
-  padding-top: 15px;
+  padding: 15px;
 }
 
 #top-navbar .navbar-brand {
@@ -135,6 +106,7 @@ input.form-control {
 
 footer {
   padding: 20px 20px 5px;
+  text-align: left;
 }
 
 footer > ul {
@@ -149,3 +121,37 @@ footer > ul > li {
   display: inline-block;
   margin-right: 15px;
 }
+
+/*************************
+ ****** TRANSITIONS ******
+ *************************/
+
+/**
+@media only screen and (min-width: 768px) {
+
+  .lang-out h1, .lang-out h2, .lang-out h3, .lang-out p, .lang-out input, .lang-out button, .lang-out a {
+    -webkit-filter: blur(0px); -moz-filter: blur(0px);
+    -o-filter: blur(0px); -ms-filter: blur(0px); 
+    filter: url(#blur); filter: blur(0px);  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+    -webkit-transition: 300ms -webkit-filter ease-in;
+    -moz-transition: 300ms -moz-filter ease-in;
+    -o-transition: 300ms -o-filter ease-in;
+    transition: 300ms filter ease-in;
+    transition: 300ms -webkit-filter ease-in;
+
+  }
+
+  .lang-in h1, .lang-in h2, .lang-in h3, .lang-in p, .lang-in input, .lang-in button, .lang-in a {
+    -webkit-filter: blur(30px); -moz-filter: blur(30px);
+    -o-filter: blur(30px); -ms-filter: blur(30px); 
+    filter: url(#blur); filter: blur(30px);  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+    -webkit-transition: 300ms -webkit-filter ease-in;
+    -moz-transition: 300ms -moz-filter ease-in;
+    -o-transition: 300ms -o-filter ease-in;
+    transition: 300ms filter ease-in;
+    transition: 300ms -webkit-filter ease-in;
+  }
+
+}
+**/
+
